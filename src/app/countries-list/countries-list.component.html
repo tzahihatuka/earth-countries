@@ -1,0 +1,39 @@
+      
+  <div class="container">
+    <div class="row">
+          <div class="col-md-6">
+              <div id="custom-search-input">
+                  <div class="input-group col-md-12">
+                      <input type="text" class="form-control input-lg" #search placeholder="Search for Country" (keyup)="searchCountryName(search.value)"/>
+                      <span class="input-group-btn">
+                          <button class="btn btn-info btn-lg" type="button">
+                              <i class="glyphicon glyphicon-search"></i>
+                          </button>
+                      </span>
+                  </div>
+              </div>
+          </div>
+    </div>
+=
+  
+  <table class="table" *ngIf="localCountriesList">
+    <thead>
+      <tr>
+        <th>name</th>
+        <th>nativeName</th>
+        <th>capital</th>
+        <th>population</th>
+        <th>flag</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let coutry of newFilteredarr">
+        <td>{{coutry.name}}</td>
+        <td>{{coutry.nativeName}}</td>
+        <td>{{coutry.capital}}</td>
+        <td>{{coutry.population}}</td>
+        <td><img src={{coutry.flag}}></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
