@@ -1,15 +1,21 @@
+import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { RootObject } from "../models/RootObject";
-import { Injectable } from "@angular/core";
+
 
 @Injectable()
 export class countriesService{
-    public getcountriesService:RootObject;
+    public getcountriesService:RootObject={};
+    str:string;
 constructor(private httpService:HttpClient){
-
-    let url:string=`https://restcountries.eu/rest/v2/all`;
-     this.httpService.get(url)
-    .subscribe((res)=>{this.getcountriesService=res});
+    this.getInfo();
+    this.str="dsgfdsgsd"
 }
+
+public getInfo() {
+    let url:string=`https://restcountries.eu/rest/v2/all`;
+     return this.httpService.get(url);
+    }
+
 }
 

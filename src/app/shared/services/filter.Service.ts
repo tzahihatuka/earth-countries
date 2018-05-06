@@ -7,13 +7,9 @@ export class filter{
 
     localCountriesList: RootObject;
     newFilteredarr:Array<RootObject>;
-    constructor(public getCountrieslist:countriesService) {
-    
-        setTimeout(() => {
-          this.localCountriesList=this.getCountrieslist.getcountriesService;
-         }, 100);
+    constructor() {
        }
-
+       
        public getFilter(name1:string){
         var input, filter, table, tr, td, i;
         input = name1;

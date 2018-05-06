@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RootObject } from '../shared/models/RootObject';
 import { filter } from '../shared/services/filter.Service';
+import { countriesService } from '../shared/services/getCountriesList.service';
 
 @Component({
   selector: 'app-countries-list',
@@ -8,22 +9,17 @@ import { filter } from '../shared/services/filter.Service';
   styleUrls: ['./countries-list.component.css']
 })
 
-export class CountriesListComponent implements OnInit {
+export class CountriesListComponent {
 public localCountriesList:RootObject;
 newFilteredarr:Array<RootObject>;
-  constructor(public getCountrieslist:filter) { 
-    setTimeout(() => {
-      this.localCountriesList=this.getCountrieslist.localCountriesList;
-      this.newFilteredarr=[];
-       for(let a in Object.keys(this.localCountriesList)){
-      this.newFilteredarr[a]=(this.localCountriesList[a]);}
-     },600);
-   }
+constructor(public getCountrieslist:filter, public bb:countriesService) { 
+  this.bb.getInfo().subscribe(res =>{this.localCountriesList=res;this.getCountrieslist.localCountriesList=res});
+       }
+   
 searchCountryName(name:string){
-  this.newFilteredarr=[];
+  this.localCountriesList=undefined;
+  console.log(this.localCountriesList)
   this.newFilteredarr=this.getCountrieslist.getFilter(name);
 }
 
-    ngOnInit() {
-    }
 }

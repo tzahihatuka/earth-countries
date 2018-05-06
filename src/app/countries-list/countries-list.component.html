@@ -14,9 +14,9 @@
               </div>
           </div>
     </div>
-=
+
   
-  <table class="table" *ngIf="localCountriesList">
+  <table class="table" >
     <thead>
       <tr>
         <th>name</th>
@@ -26,7 +26,16 @@
         <th>flag</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody *ngIf="localCountriesList">
+      <tr *ngFor="let coutry of localCountriesList">
+        <td>{{coutry.name}}</td>
+        <td>{{coutry.nativeName}}</td>
+        <td>{{coutry.capital}}</td>
+        <td>{{coutry.population}}</td>
+        <td><img src={{coutry.flag}}></td>
+      </tr>
+    </tbody>
+    <tbody *ngIf="newFilteredarr">
       <tr *ngFor="let coutry of newFilteredarr">
         <td>{{coutry.name}}</td>
         <td>{{coutry.nativeName}}</td>

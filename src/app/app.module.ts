@@ -2,13 +2,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
-import { countriesService } from './shared/services/getCountriesList.service';
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { MainComponent } from './main/main.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { CountriesListComponent } from './countries-list/countries-list.component';
 import { RouterModule, Routes } from '@angular/router';
+import { countriesService } from './shared/services/getCountriesList.service';
 import { filter } from './shared/services/filter.Service';
 
 const appRoutes: Routes = [
