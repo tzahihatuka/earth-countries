@@ -6,7 +6,7 @@ import { RegionalBloc } from "./RegionalBloc";
 
    
         export interface RootObject {
-            name?: string;
+           name?: string;
          //   topLevelDomain?: string[];
          //   alpha2Code?: string;
         //    alpha3Code?: string;
@@ -33,5 +33,5 @@ import { RegionalBloc } from "./RegionalBloc";
         }
     
     
-    
-    
+          
+        

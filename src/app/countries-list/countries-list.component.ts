@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import { RootObject } from '../shared/models/RootObject';
 import { filter } from '../shared/services/filter.Service';
 import { countriesService } from '../shared/services/getCountriesList.service';
@@ -10,10 +10,10 @@ import { countriesService } from '../shared/services/getCountriesList.service';
 })
 
 export class CountriesListComponent {
-public localCountriesList:RootObject;
+public localCountriesList:RootObject={};
 newFilteredarr:Array<RootObject>;
 constructor(public getCountrieslist:filter, public bb:countriesService) { 
-  this.bb.getInfo().subscribe(res =>{this.localCountriesList=res;this.getCountrieslist.localCountriesList=res});
+  this.bb.getInfo().subscribe(res =>{this.localCountriesList=res;this.getCountrieslist.localCountriesList=res}); 
        }
    
 searchCountryName(name:string){
